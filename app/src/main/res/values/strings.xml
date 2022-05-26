@@ -1,3 +1,4 @@
 <resources>
     <string name="app_name">Resistor Color Code Calculator</string>
+    <string name="select">1st band color</string>
 </resources>
