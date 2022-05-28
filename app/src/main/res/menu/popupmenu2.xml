@@ -31,7 +31,10 @@
     <item
         android:id="@+id/white"
         android:title="White"/>
-
-
-
+    <item
+        android:id="@+id/gold"
+        android:title="Gold"/>
+    <item
+        android:id="@+id/silver"
+        android:title="Silver"/>
 </menu>
