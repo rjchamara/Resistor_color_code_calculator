@@ -9,7 +9,7 @@ import android.view.View;
 import android.widget.Button;
 
 public class MainActivity extends AppCompatActivity {
-    Button colortovalue;
+    Button colortovalue,valuetocolor;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -17,6 +17,7 @@ public class MainActivity extends AppCompatActivity {
         setContentView(R.layout.activity_main);
 
         colortovalue = findViewById(R.id.colortovalue);
+        valuetocolor = findViewById(R.id.valuetocolor);
 
         colortovalue.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -26,6 +27,9 @@ public class MainActivity extends AppCompatActivity {
 
             }
         });
+
+
+
 
     }
 }

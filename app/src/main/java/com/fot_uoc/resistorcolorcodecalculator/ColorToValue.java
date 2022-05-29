@@ -18,7 +18,9 @@ import android.widget.Toast;
 public class ColorToValue extends AppCompatActivity {
     //initialize variable
     TextView band1,band2,band3,band4;
-    Button band1btn,band2btn,band3btn,band4btn;
+    Button band1btn,band2btn,band3btn,band4btn,cal;
+    double band1val,band2val,band3val,band4val,result;
+    String value,unite;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -34,6 +36,8 @@ public class ColorToValue extends AppCompatActivity {
         band3btn = findViewById(R.id.band3btn);
         TextView band4 = (TextView) findViewById(R.id.band4);
         band4btn = findViewById(R.id.band4btn);
+        cal = findViewById(R.id.cal);
+        TextView resistance = (TextView) findViewById(R.id.resistance);
 
         band1btn.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -50,33 +54,43 @@ public class ColorToValue extends AppCompatActivity {
                             //set colors
                             case R.id.black:
                                 band1.setBackgroundColor(0xFF000000);
+                                band1val =0;
                                 return true;
                             case R.id.brown:
                                 band1.setBackgroundColor(0xFFA0522D);
+                                band1val =1;
                                 return true;
                             case R.id.red:
                                 band1.setBackgroundColor(0xFFFF0000);
+                                band1val =2;
                                 return true;
                             case R.id.orange:
                                 band1.setBackgroundColor(0xFFFF4500);
+                                band1val =3;
                                 return true;
                             case R.id.yellow:
                                 band1.setBackgroundColor(0xFFFFFF00);
+                                band1val =4;
                                 return true;
                             case R.id.green:
                                 band1.setBackgroundColor(0xFF228B22);
+                                band1val =5;
                                 return true;
                             case R.id.blue:
                                 band1.setBackgroundColor(0xFF0000FF);
+                                band1val =6;
                                 return true;
                             case R.id.violet:
                                 band1.setBackgroundColor(0xFF9400D3);
+                                band1val =7;
                                 return true;
                             case R.id.grey:
                                 band1.setBackgroundColor(0xFF808080);
+                                band1val =8;
                                 return true;
                             case R.id.white:
                                 band1.setBackgroundColor(0xFFFFFFFF);
+                                band1val =9;
                                 return true;
 
                         }
@@ -104,33 +118,43 @@ public class ColorToValue extends AppCompatActivity {
                             //set colors
                             case R.id.black:
                                 band2.setBackgroundColor(0xFF000000);
+                                band2val =0;
                                 return true;
                             case R.id.brown:
                                 band2.setBackgroundColor(0xFFA0522D);
+                                band2val =1;
                                 return true;
                             case R.id.red:
                                 band2.setBackgroundColor(0xFFFF0000);
+                                band2val =2;
                                 return true;
                             case R.id.orange:
                                 band2.setBackgroundColor(0xFFFF4500);
+                                band2val =3;
                                 return true;
                             case R.id.yellow:
                                 band2.setBackgroundColor(0xFFFFFF00);
+                                band2val =4;
                                 return true;
                             case R.id.green:
                                 band2.setBackgroundColor(0xFF228B22);
+                                band2val =5;
                                 return true;
                             case R.id.blue:
                                 band2.setBackgroundColor(0xFF0000FF);
+                                band2val =6;
                                 return true;
                             case R.id.violet:
                                 band2.setBackgroundColor(0xFF9400D3);
+                                band2val =7;
                                 return true;
                             case R.id.grey:
                                 band2.setBackgroundColor(0xFF808080);
+                                band2val =8;
                                 return true;
                             case R.id.white:
                                 band2.setBackgroundColor(0xFFFFFFFF);
+                                band2val =9;
                                 return true;
 
                         }
@@ -159,39 +183,63 @@ public class ColorToValue extends AppCompatActivity {
                             //set colors
                             case R.id.black:
                                 band3.setBackgroundColor(0xFF000000);
+                                band3val=1;
+                                unite="Ω";
                                 return true;
                             case R.id.brown:
                                 band3.setBackgroundColor(0xFFA0522D);
+                                band3val=10;
+                                unite="Ω";
                                 return true;
                             case R.id.red:
                                 band3.setBackgroundColor(0xFFFF0000);
+                                band3val=0.1;
+                                unite="kΩ";
                                 return true;
                             case R.id.orange:
                                 band3.setBackgroundColor(0xFFFF4500);
+                                band3val=1;
+                                unite="kΩ";
                                 return true;
                             case R.id.yellow:
                                 band3.setBackgroundColor(0xFFFFFF00);
+                                band3val=10;
+                                unite="kΩ";
                                 return true;
                             case R.id.green:
                                 band3.setBackgroundColor(0xFF228B22);
+                                band3val=0.1;
+                                unite="MΩ";
                                 return true;
                             case R.id.blue:
                                 band3.setBackgroundColor(0xFF0000FF);
+                                band3val=1;
+                                unite="MΩ";
                                 return true;
                             case R.id.violet:
                                 band3.setBackgroundColor(0xFF9400D3);
+                                band3val=10;
+                                unite="MΩ";
                                 return true;
                             case R.id.grey:
                                 band3.setBackgroundColor(0xFF808080);
+                                band3val=0.1;
+                                unite="GΩ";
                                 return true;
                             case R.id.white:
                                 band3.setBackgroundColor(0xFFFFFFFF);
+                                band3val=1;
+                                unite="GΩ";
                                 return true;
                             case R.id.gold:
                                 band3.setBackgroundColor(0xFFFFD700);
+                                band3val=0.1;
+                                unite="Ω";
                                 return true;
                             case R.id.silver:
                                 band3.setBackgroundColor(0xFFC0C0C0);
+                                band3val=0.01;
+                                unite="Ω";
                                 return true;
 
 
@@ -221,33 +269,43 @@ public class ColorToValue extends AppCompatActivity {
 
                             case R.id.brown:
                                 band4.setBackgroundColor(0xFFA0522D);
+                                band4val=1;
                                 return true;
                             case R.id.red:
                                 band4.setBackgroundColor(0xFFFF0000);
+                                band4val=2;
                                 return true;
                             case R.id.orange:
                                 band4.setBackgroundColor(0xFFFF4500);
+                                band4val=3;
                                 return true;
                             case R.id.yellow:
                                 band4.setBackgroundColor(0xFFFFFF00);
+                                band4val=4;
                                 return true;
                             case R.id.green:
                                 band4.setBackgroundColor(0xFF228B22);
+                                band4val=0.5;
                                 return true;
                             case R.id.blue:
                                 band4.setBackgroundColor(0xFF0000FF);
+                                band4val=0.25;
                                 return true;
                             case R.id.violet:
                                 band4.setBackgroundColor(0xFF9400D3);
+                                band4val=0.1;
                                 return true;
                             case R.id.grey:
                                 band4.setBackgroundColor(0xFF808080);
+                                band4val=0.05;
                                 return true;
                             case R.id.gold:
                                 band4.setBackgroundColor(0xFFFFD700);
+                                band4val=5;
                                 return true;
                             case R.id.silver:
                                 band4.setBackgroundColor(0xFFC0C0C0);
+                                band4val=10;
                                 return true;
 
 
@@ -261,6 +319,17 @@ public class ColorToValue extends AppCompatActivity {
 
             }
         });
+        cal.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                result= ((band1val*10)+band2val)*band3val;
+                value = result+unite+" ± "+band4val+"%";
+                resistance.setText(value);
+
+            }
+        });
+
+
 
 
 
