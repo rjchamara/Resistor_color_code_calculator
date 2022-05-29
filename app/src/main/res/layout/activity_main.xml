@@ -10,7 +10,7 @@
         android:id="@+id/colortovalue"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Color To Value"
+        android:text="4 band resistor"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.497"
@@ -19,14 +19,14 @@
         app:layout_constraintVertical_bias="0.448" />
 
     <Button
-        android:id="@+id/valuetocolor"
+        android:id="@+id/threebandbtn"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="VALUE TO COLOR"
+        android:text="3 band resistor"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.498"
+        app:layout_constraintHorizontal_bias="0.497"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.544" />
+        app:layout_constraintVertical_bias="0.364" />
 </androidx.constraintlayout.widget.ConstraintLayout>
