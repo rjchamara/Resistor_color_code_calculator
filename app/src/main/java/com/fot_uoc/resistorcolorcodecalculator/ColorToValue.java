@@ -4,6 +4,7 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import android.annotation.SuppressLint;
 import android.graphics.Color;
+import android.graphics.drawable.ColorDrawable;
 import android.os.Bundle;
 import android.view.MenuItem;
 import android.view.View;
@@ -26,6 +27,7 @@ public class ColorToValue extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_color_to_value);
+        getSupportActionBar().setBackgroundDrawable(new ColorDrawable(getResources().getColor(R.color.teal_200)));
 
         //assign variable
         TextView band1 = (TextView) findViewById(R.id.band1);
@@ -43,19 +45,16 @@ public class ColorToValue extends AppCompatActivity {
             @Override
             public void onClick(View v) {
               //initialize the popup menu
-                PopupMenu popupMenu1 = new PopupMenu(getApplicationContext(),band1btn);
+                PopupMenu popupMenu5 = new PopupMenu(getApplicationContext(),band1btn);
                 //inflate the popup menu
-                popupMenu1.getMenuInflater().inflate(R.menu.popupmenu1,popupMenu1.getMenu());
-                popupMenu1.setOnMenuItemClickListener(new PopupMenu.OnMenuItemClickListener() {
+                popupMenu5.getMenuInflater().inflate(R.menu.popupmenu5,popupMenu5.getMenu());
+                popupMenu5.setOnMenuItemClickListener(new PopupMenu.OnMenuItemClickListener() {
 
                     @Override
                     public boolean onMenuItemClick(MenuItem item) {
                         switch (item.getItemId()){
                             //set colors
-                            case R.id.black:
-                                band1.setBackgroundColor(0xFF000000);
-                                band1val =0;
-                                return true;
+
                             case R.id.brown:
                                 band1.setBackgroundColor(0xFFA0522D);
                                 band1val =1;
@@ -99,7 +98,7 @@ public class ColorToValue extends AppCompatActivity {
                 });
 
                 //show the popup menu
-                popupMenu1.show();
+                popupMenu5.show();
             }
         });
         band2btn.setOnClickListener(new View.OnClickListener() {

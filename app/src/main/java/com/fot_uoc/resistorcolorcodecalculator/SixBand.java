@@ -2,6 +2,7 @@ package com.fot_uoc.resistorcolorcodecalculator;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.graphics.drawable.ColorDrawable;
 import android.os.Bundle;
 import android.view.MenuItem;
 import android.view.View;
@@ -19,6 +20,7 @@ public class SixBand extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_six_band);
+        getSupportActionBar().setBackgroundDrawable(new ColorDrawable(getResources().getColor(R.color.teal_200)));
         //assign variable
         TextView band1of6 = (TextView) findViewById(R.id.band1of6);
         btn1of6 = findViewById(R.id.btn1of6);
@@ -39,19 +41,16 @@ public class SixBand extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 //initialize the popup menu
-                PopupMenu popupMenu1 = new PopupMenu(getApplicationContext(),btn1of6);
+                PopupMenu popupMenu5 = new PopupMenu(getApplicationContext(),btn1of6);
                 //inflate the popup menu
-                popupMenu1.getMenuInflater().inflate(R.menu.popupmenu1,popupMenu1.getMenu());
-                popupMenu1.setOnMenuItemClickListener(new PopupMenu.OnMenuItemClickListener() {
+                popupMenu5.getMenuInflater().inflate(R.menu.popupmenu5,popupMenu5.getMenu());
+                popupMenu5.setOnMenuItemClickListener(new PopupMenu.OnMenuItemClickListener() {
 
                     @Override
                     public boolean onMenuItemClick(MenuItem item) {
                         switch (item.getItemId()){
                             //set colors
-                            case R.id.black:
-                                band1of6.setBackgroundColor(0xFF000000);
-                                band1val =0;
-                                return true;
+
                             case R.id.brown:
                                 band1of6.setBackgroundColor(0xFFA0522D);
                                 band1val =1;
@@ -95,7 +94,7 @@ public class SixBand extends AppCompatActivity {
                 });
 
                 //show the popup menu
-                popupMenu1.show();
+                popupMenu5.show();
             }
         });
         btn2of6.setOnClickListener(new View.OnClickListener() {
