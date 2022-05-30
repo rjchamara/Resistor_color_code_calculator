@@ -14,7 +14,7 @@ public class ThreeBand extends AppCompatActivity {
     TextView band1of3,band2of3,band3of3;
     Button btn1of3,btn2of3,btn3of3,band3cal;
     double band1val,band2val,band3val,result;
-    String value,unite;
+    String value,unite,finalval;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -101,7 +101,7 @@ public class ThreeBand extends AppCompatActivity {
                 //initialize the popup menu
                 PopupMenu popupMenu1 = new PopupMenu(getApplicationContext(),btn2of3);
                 //inflate the popup menu
-                popupMenu1.getMenuInflater().inflate(R.menu.popupmenu2,popupMenu1.getMenu());
+                popupMenu1.getMenuInflater().inflate(R.menu.popupmenu1,popupMenu1.getMenu());
                 popupMenu1.setOnMenuItemClickListener(new PopupMenu.OnMenuItemClickListener() {
 
                     @Override
@@ -250,7 +250,8 @@ public class ThreeBand extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 result= ((band1val*10)+band2val)*band3val;
-                value = result+unite+" ± "+"20%";
+                finalval=String.format("%.2f",result);
+                value = finalval+unite+" ± "+"20%";
                 band3res.setText(value);
 
             }

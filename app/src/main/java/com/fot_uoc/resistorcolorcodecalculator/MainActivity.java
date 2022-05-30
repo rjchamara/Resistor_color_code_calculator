@@ -8,7 +8,7 @@ import android.view.View;
 import android.widget.Button;
 
 public class MainActivity extends AppCompatActivity {
-    Button colortovalue,threebandbtn;
+    Button colortovalue,threebandbtn,fivebandbtn;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -17,6 +17,7 @@ public class MainActivity extends AppCompatActivity {
 
         colortovalue = findViewById(R.id.colortovalue);
         threebandbtn = findViewById(R.id.threebandbtn);
+        fivebandbtn = findViewById(R.id.fivebandbtn);
 
         colortovalue.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -31,6 +32,13 @@ public class MainActivity extends AppCompatActivity {
             public void onClick(View v) {
                 Intent ThreeBand = new Intent(MainActivity.this,ThreeBand.class);
                 startActivity(ThreeBand);
+            }
+        });
+        fivebandbtn.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent FiveBand = new Intent(MainActivity.this,FiveBand.class);
+                startActivity(FiveBand);
             }
         });
 

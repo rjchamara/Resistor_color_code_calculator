@@ -20,7 +20,7 @@ public class ColorToValue extends AppCompatActivity {
     TextView band1,band2,band3,band4;
     Button band1btn,band2btn,band3btn,band4btn,cal;
     double band1val,band2val,band3val,band4val,result;
-    String value,unite;
+    String value,unite,finalval;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -108,7 +108,7 @@ public class ColorToValue extends AppCompatActivity {
                 //initialize the popup menu
                 PopupMenu popupMenu1 = new PopupMenu(getApplicationContext(),band2btn);
                 //inflate the popup menu
-                popupMenu1.getMenuInflater().inflate(R.menu.popupmenu2,popupMenu1.getMenu());
+                popupMenu1.getMenuInflater().inflate(R.menu.popupmenu1,popupMenu1.getMenu());
                 popupMenu1.setOnMenuItemClickListener(new PopupMenu.OnMenuItemClickListener() {
 
                     @Override
@@ -323,7 +323,8 @@ public class ColorToValue extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 result= ((band1val*10)+band2val)*band3val;
-                value = result+unite+" ± "+band4val+"%";
+                finalval=String.format("%.2f",result);
+                value = finalval+unite+" ± "+band4val+"%";
                 resistance.setText(value);
 
             }
